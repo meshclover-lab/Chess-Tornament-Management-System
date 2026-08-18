@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<div class="d-flex justify-content-between mb-4">
+
+    <h2>Players</h2>
+
+    <a href="{% url 'add_player' %}" class="btn btn-primary">
+        Add Player
+    </a>
+
+</div>
+
+
+<div class="card p-4">
+
+    <table class="table table-striped">
+
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Rating</th>
+        </tr>
+
+
+        {% for player in players %}
+
+        <tr>
+
+            <td>
+                {{player.first_name}} {{player.last_name}}
+            </td>
+
+            <td>
+                {{player.email}}
+            </td>
+
+            <td>
+                {{player.phone}}
+            </td>
+
+            <td>
+                {{player.rating}}
+            </td>
+
+        </tr>
+
+
+        {% empty %}
+
+        <tr>
+            <td colspan="4">
+                No players available
+            </td>
+        </tr>
+
+        {% endfor %}
+
+
+    </table>
+
+</div>
+
+{% endblock %}

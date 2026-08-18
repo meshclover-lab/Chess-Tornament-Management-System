@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+
+<h2>Standings</h2>
+
+
+<div class="card p-4">
+
+
+    <table class="table table-striped">
+
+
+        <tr>
+
+            <th>Rank</th>
+
+            <th>Player</th>
+
+            <th>Points</th>
+
+        </tr>
+
+
+        {% for item in standings %}
+
+
+        <tr>
+
+            <td>
+                {{forloop.counter}}
+            </td>
+
+
+            <td>
+                {{item.player}}
+            </td>
+
+
+            <td>
+                {{item.points}}
+            </td>
+
+
+        </tr>
+
+
+        {% empty %}
+
+
+        <tr>
+
+            <td colspan="3">
+
+                No standings available
+
+            </td>
+
+        </tr>
+
+
+        {% endfor %}
+
+
+    </table>
+
+
+</div>
+
+
+{% endblock %}

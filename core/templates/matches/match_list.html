@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="d-flex justify-content-between mb-4">
+
+    <h2>Matches</h2>
+
+    <a href="{% url 'add_match' %}" class="btn btn-primary">
+        Add Match
+    </a>
+
+</div>
+
+
+<div class="card p-4">
+
+    <table class="table table-striped">
+
+        <tr>
+            <th>Tournament</th>
+            <th>Player 1</th>
+            <th>Player 2</th>
+            <th>Result</th>
+        </tr>
+
+
+        {% for match in matches %}
+
+        <tr>
+
+            <td>{{match.tournament}}</td>
+
+            <td>{{match.player1}}</td>
+
+            <td>{{match.player2}}</td>
+
+            <td>{{match.result}}</td>
+
+        </tr>
+
+
+        {% empty %}
+
+        <tr>
+            <td colspan="4">
+                No matches available
+            </td>
+        </tr>
+
+        {% endfor %}
+
+
+    </table>
+
+</div>
+
+{% endblock %}

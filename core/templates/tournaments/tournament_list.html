@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<div class="d-flex justify-content-between mb-4">
+
+    <h2>Tournaments</h2>
+
+    <a href="{% url 'add_tournament' %}" class="btn btn-primary">
+        Add Tournament
+    </a>
+
+</div>
+
+
+<div class="card p-4">
+
+    <table class="table table-striped">
+
+        <tr>
+
+            <th>Name</th>
+
+            <th>Location</th>
+
+            <th>Start Date</th>
+
+            <th>End Date</th>
+
+        </tr>
+
+
+        {% for tournament in tournaments %}
+
+        <tr>
+
+            <td>{{tournament.name}}</td>
+
+            <td>{{tournament.location}}</td>
+
+            <td>{{tournament.start_date}}</td>
+
+            <td>{{tournament.end_date}}</td>
+
+        </tr>
+
+
+        {% empty %}
+
+        <tr>
+
+            <td colspan="4">
+                No tournaments available
+            </td>
+
+        </tr>
+
+        {% endfor %}
+
+
+    </table>
+
+</div>
+
+
+{% endblock %}

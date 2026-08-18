@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+
+<h2>Add Tournament</h2>
+
+
+<div class="card p-4">
+
+
+    <form method="POST">
+
+        {% csrf_token %}
+
+        {{form.as_p}}
+
+
+        <button class="btn btn-success">
+            Save Tournament
+        </button>
+
+
+        <a href="{% url 'tournaments' %}" class="btn btn-secondary">
+            Cancel
+        </a>
+
+
+    </form>
+
+
+</div>
+
+
+{% endblock %}

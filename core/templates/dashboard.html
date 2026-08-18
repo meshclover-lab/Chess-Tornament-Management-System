@@ -1,0 +1,122 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container-fluid">
+
+    <h2 class="mb-4">
+        Dashboard
+    </h2>
+
+
+    <div class="row g-4">
+
+
+        <!-- Players Card -->
+        <div class="col-md-4">
+
+            <div class="card dashboard-card p-4 text-center">
+
+                <i class="bi bi-people-fill fs-1 mb-3"></i>
+
+                <h2>
+                    {{ player_count }}
+                </h2>
+
+                <p>
+                    Total Players
+                </p>
+
+                <a href="{% url 'players' %}" class="btn btn-primary">
+                    Manage Players
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Tournament Card -->
+        <div class="col-md-4">
+
+            <div class="card dashboard-card p-4 text-center">
+
+                <i class="bi bi-trophy-fill fs-1 mb-3"></i>
+
+                <h2>
+                    {{ tournament_count }}
+                </h2>
+
+                <p>
+                    Total Tournaments
+                </p>
+
+                <a href="{% url 'tournaments' %}" class="btn btn-primary">
+                    Manage Tournaments
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Matches Card -->
+        <div class="col-md-4">
+
+            <div class="card dashboard-card p-4 text-center">
+
+                <i class="bi bi-controller fs-1 mb-3"></i>
+
+                <h2>
+                    {{ match_count }}
+                </h2>
+
+                <p>
+                    Total Matches
+                </p>
+
+                <a href="{% url 'matches' %}" class="btn btn-primary">
+                    Manage Matches
+                </a>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- Welcome Section -->
+
+    <div class="card mt-5 p-4">
+
+        <h4>
+            Welcome to CTMS
+        </h4>
+
+        <hr>
+
+        <p>
+            Chess Tournament Management System provides an easy way
+            to manage players, tournaments, matches, and standings
+            in a centralized platform.
+        </p>
+
+
+        <p>
+            Use the navigation menu to manage tournament activities
+            and monitor competition progress.
+        </p>
+
+
+    </div>
+
+
+</div>
+
+
+{% endblock %}
